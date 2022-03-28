@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 未读 1 
+    const list = [
+      { id: "001", msg: 'hello', isRead: '1' },
+      { id: "002", msg: 'hello', isRead: '1' },
+      { id: "003", msg: 'hello', isRead: '0' },
+      { id: "004", msg: 'hello', isRead: '0' },
+      { id: "005", msg: 'hello', isRead: '1' },
+      { id: "006", msg: 'hello', isRead: '1' },
+      { id: "007", msg: 'hello', isRead: '0' },
+      { id: "008", msg: 'hello', isRead: '0' },
+    ]
+
+    const newList = JSON.parse(JSON.stringify(list))
+    list.sort((a, b) => a.isRead - b.isRead)
+  </script>
+</body>
+
+</html>

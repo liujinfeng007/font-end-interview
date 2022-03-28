@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    new Promise(function (resolve) {
+        console.log('1')// 宏任务一
+        resolve()
+    }).then(function () {
+        console.log('3') // 宏任务一的微任务
+    })
+    setTimeout(function () { // 宏任务二
+        console.log('4')
+        setTimeout(function () { // 宏任务五
+            console.log('7')
+            new Promise(function (resolve) {
+                console.log('8')
+                resolve()
+            }).then(function () {
+                console.log('10')
+                setTimeout(function () {  // 宏任务七
+                    console.log('12')
+                })
+            })
+            console.log('9')
+        })
+    })
+    setTimeout(function () { // 宏任务三
+        console.log('5')
+    })
+    setTimeout(function () {  // 宏任务四
+        console.log('6')
+        setTimeout(function () { // 宏任务六
+            console.log('11')
+        })
+    })
+    console.log('2') // 宏任务一
+</script>
+</body>
+</html>

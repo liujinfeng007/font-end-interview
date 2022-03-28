@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body {
+            height: 500%;
+        }
+    </style>
+</head>
+<body>
+<button >按钮</button>
+<script>
+    /**
+     * 节流函数     对于频繁触发的函数，必须大于规定的间隔时间，才能触发下一次
+     * @param fn  要被节流的函数
+     * @param delay 规定的时间
+     * @returns {(function(): void)|*}
+     */
+    function throttle(fn, delay) {
+        // 记录上一次函数触发的时间
+        let lastTime = 0;
+        // 利用闭包的特性,保存共享lastTime变量。
+        return function () {
+            const nowTime = Date.now();
+            if (nowTime - lastTime > delay) {
+                fn();
+                // 同步lastTime
+                lastTime = nowTime;
+            }
+        }
+    }
+
+    window.onscroll = throttle(function () {
+        console.log('我滚动了' + Date.now())
+    }, 200)
+
+    /**
+     * 防抖函数    一个频繁触发的函数，在规定的时间内，只让最后一次生效，前面的不生效
+     * @param fn  触发的函数
+     * @param delay 延时时间
+     */
+    function debounce(fn,delay){
+        let timer = null
+        return function () {
+            clearTimeout(timer)
+            timer=setTimeout(function () {
+                fn.apply(this);
+            },delay)
+        }
+    }
+    document.querySelector('button').addEventListener('click', debounce(function() {console.log(111)},500)
+    )
+</script>
+</body>
+</html>

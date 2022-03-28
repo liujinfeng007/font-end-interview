@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    async function async1() {
+        console.log('async1 start')  //2
+        //遇见await 执行await右边紧跟的表达式，然后让出线程，跳出async函数，带本轮同步代码全部执行完毕后再回头执行await 后面阻塞的代码
+        //await等待的结果分为两种情况：不是promise对象；是promise对象
+        //如果不是promise对象，await会阻塞后面的代码，先执行async外面的同步代码，同步代码执行完，再回到async内部，把这个非promise的东西，作为await表达式的结果。
+        //如果等到的是一个promise对象，await也会暂停后面的代码，先执行async外面的同步代码，等着promise对象fulfilled，然后把resolve的参数作为await表达式的运算结果。
+        
+        await async2()
+        console.log('async1 end')   //5
+    }
+
+    async function async2() {
+        console.log('async2')  //3
+    }
+
+    console.log('script start')  //1
+    setTimeout(function () {
+        console.log('setTimeout')  //7
+    }, 0)
+    async1();     //2
+    new Promise(function (resolve) {
+        console.log('promise1')  //4
+        resolve();
+    }).then(function () {
+        console.log('promise2')   //6
+    })
+    console.log('script end')  //5
+</script>
+</body>
+</html>

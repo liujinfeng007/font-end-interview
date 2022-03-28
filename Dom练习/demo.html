@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+
+        }
+    </style>
+</head>
+<body>
+<!-- <h1>hello world</h1> -->
+<div>
+    <div class="wrap">
+        <div class="box">hello world</div>
+        <span>88</span>
+    </div>
+
+    <div class="left">
+        <a href="www.baidu.com">click me</a>
+    </div>
+    <a href="http://www.cqtcw.net/html/2021-05/19/content_51348797.htm">999</a>
+    <a href="" id="down">tiao</a>
+</div>
+<div>
+
+</div>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    new Promise((resolve,reject)=>{
+        try{
+            throw new Error('error111')
+        }catch(e){
+            console.log(e);
+        }
+    })
+    const b = $(".left a").attr("href")
+   console.log(b );
+   $("#down").attr("href",b)
+</script>
+<!-- <script>
+        var name = 'liu'
+
+const fn1=()=>{
+    console.log(this);
+    console.log(this.name);
+}
+    function fn(){
+        console.log(name);
+        console.log(this.name)
+    }
+    const obj = {
+        name:'li',
+        getName:fn
+    }
+
+    $(function () {
+        const demo = '<span>33</span>'
+        const div = $(`<div>${demo}</div>`)
+        $('div').html(div)
+
+        $('h1').click(()=>{
+            console.log(111);
+        })
+    })
+</script> -->
+</body>
+</html>

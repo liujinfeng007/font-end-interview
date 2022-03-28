@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Human() {
+         this.run=function (){
+            console.log('running')
+        }
+    }
+
+    function Person() {
+        this.swim = function (){
+            console.log("swimming")
+        }
+    }
+
+    Person.prototype=Human.prototype
+
+    const p = new Person();
+
+</script>
+</body>
+</html>

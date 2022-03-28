@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: flex;
+        }
+        /*脱标的盒子,包括行内元素，自动转换为块级元素，可设置宽高*/
+        /*行内元素设置上下外边距、上下内边距无效，脱标后，设置有效*/
+
+        .span{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin-top:50px ;
+            padding-top: 100px;
+            border: 100px dotted red;
+            /*margin-right: 50px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+            /*position: relative;*/
+        }
+        .container>span:after{
+            display: inline-block;
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span class="span">hello world</span>
+    <span class="span">welcome t0 the world</span>
+</div>
+<hr/>
+<div class="container">
+    <span onclick="log()" >hello world</span>
+</div>
+<script>
+  function  log(){
+        console.log(111)
+    }
+</script>
+</body>
+</html>

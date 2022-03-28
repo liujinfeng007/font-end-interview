@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 500px;
+            height: 500px;
+            background: gray;
+            position: relative;
+
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            position: absolute;
+            /*方式一*/
+            /*top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;*/
+
+            /*方式二*/
+            left: 50%;
+            top: 50%;
+
+            /*margin-left: -100px;
+            margin-top: -100px;*/
+            /*or*/
+
+            /*transform: translate(-50%,-50%);*/
+
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="box"></div>
+</div>
+</body>
+</html>

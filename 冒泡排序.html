@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let arr = [1, 2, 5, -1, 0]
+
+   //调用api实现从小到大排序，会改变原数组
+   arr.sort((x,y)=>x-y)
+   //调用api实现从大到小排序
+   arr.sort((x,y)=>y-x)
+   console.log(arr)
+
+    // 实现从大到小排序
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i; j++) {
+            if (arr[j + 1] > arr[j]) {
+                let max = arr[j]
+                max = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = max
+            }
+        }
+    }
+    console.log('从大到小排序',arr)
+    //实现从小到大排序
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i; j++) {
+            if (arr[j + 1] < arr[j]) {
+                let min = arr[j]
+                min = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = min
+            }
+        }
+    }
+    console.log('从小到大排序',arr)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heelo</title>
+</head>
+<body>
+<!--#include virtual="/demo.html"-->
+
+<div class="head">
+    <div class="content-wrap">
+        <div class="content" style="width: 100%;overflow: hidden">
+            <b>hell </b>
+            <table width="500" height="100">
+                <tr>
+                    <td>xx</td>
+                </tr>
+            </table>
+            <strong>world</strong>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+    $(function () {
+        $('head>title').text('Hello')
+        // 处理富文本有table
+        var _table = $('table')
+        $(document).ready(function () {
+            if (_table.length !== 0) {
+
+                $('.content-wrap').prepend('<div></div>')
+                $('.content-wrap').children().eq(0).append(_table).css({"width": '100%', "overflow-x": "auto"})
+
+            }
+        })
+    })
+
+
+    function fnn() {
+        return new Promise(function (resolve, reject) {
+            throw new Error('Warning！')
+        })
+    }
+
+    async function fn() {
+        try {
+            const res = await fnn()
+        } catch (e) {
+            console.log(e.message)
+        }
+
+    }
+
+    fn()
+
+    function reduceFunction() {
+        const arr = [1, 2, 3, 4, 5, 6]
+        let i = 1
+
+        const sum = arr.reduce((pre, cur) => {
+            console.log(pre, cur, i++)
+            return pre + cur
+        })
+        console.log(sum)
+    }
+
+    name = 'LJF'
+    age = 20
+    reduceFunction()
+    //箭头函数中的this，指向自身定义时，所处的this环境
+    const fn1 = () => {
+        console.log(this, this.name, 'hello')
+    }
+    const fn2 = function () {
+        console.log(this, this.age, 'world')
+    }
+    const obj = {
+        name: 'liu', age: 99,
+        getName: fn1,
+        getAge: fn2
+    }
+    obj.getName()
+    obj.getAge()
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">
+        <p></p>
+    </div>
+    <div class="box2">
+        <p><span></span> </p>
+    </div>
+    <div class="box3"></div> 
+    <script>
+       const box3= document.querySelector('.box3')
+       console.log(box3);
+       
+       box3.innerHTML='<div>helloworld</div>'
+      const p2=  document.querySelector('.box2>p')
+      const newP2 = p2.cloneNode(true)
+      console.log(newP2);
+        document.querySelector('.box1').appendChild(newP2)
+
+    </script>
+</body>
+</html>

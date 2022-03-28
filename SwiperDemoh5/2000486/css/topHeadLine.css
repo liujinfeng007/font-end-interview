@@ -1,0 +1,85 @@
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.topTipsWrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: 0.93rem;
+    padding: 0.16rem 0.22rem 0.15rem 0.2rem;
+    background-color: #e7f1fe;
+    margin-bottom: 0.32rem;
+}
+
+.topTipsPic{
+    width: 1.06rem;
+    height: 0.62rem;
+}
+
+.myTopTipsSwiper {
+    width: calc(100% - 1.06rem - 0.2rem);
+}
+
+.topTipsTxt {
+    display: block;
+    width: 100%;
+}
+.TipsTxt{
+    position: relative;
+    box-sizing: border-box;
+    margin-left: 0.2rem;
+    padding-left: 0.3rem;
+    width: 5.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: initial;
+    font-size: 0.28rem;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #000000;
+}
+.TipsTxt:before{
+    position: absolute;
+    top: 50%;
+    left: 0.08rem;
+    transform: translateY(-50%);
+    display: inline-block;
+    content: "";
+    width: 0.08rem;
+    height: 0.08rem;
+    background: #DB9E36;
+    border-radius: 50%;
+    margin-right: 0.08rem;
+}
+.tipsTime{
+    color: #7a7773;
+}

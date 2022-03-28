@@ -1,0 +1,76 @@
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.topTipsWrapper {
+    box-sizing: border-box;
+    width: 100%;
+    height: 89px;
+    padding: 15px 43px 12px 35px;
+    background-color: #e7f1fe;
+    margin-bottom: 26px;
+}
+
+.myTopTipsSwiper {
+    width: calc(100% - 106px - 32px);
+}
+
+.topTipsTxt {
+    display: block;
+    width: 100%;
+}
+.TipsTxt{
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 20px;
+    color: #000;
+    width: 650px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: initial;
+}
+.TipsTxt:before{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: inline-block;
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #DB9E36;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+.tipsTime{
+    color: #7a7773;
+}

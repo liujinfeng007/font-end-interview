@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj1 = { name: "张三", age: { score: 100, sex: "男" } }
+    const obj2 = { name: "李四", age: { score: 20 } }
+    // console.log("object.assgin修改前");
+    // console.log("obj1", obj1);
+    // console.log("obj2", obj2);
+    // console.log("object.assgin修改后");
+    // Object.assign(obj1, obj2)
+    // console.log("obj1", obj1);
+    // console.log("obj2", obj2);
+    // obj1.name = "王五"
+    // console.log("修改后");
+    // console.log("obj1", obj1);
+    // console.log("obj2", obj2);
+    let obj3 = JSON.stringify(obj1)
+    console.log("stringify", obj3);
+    obj3 = JSON.parse(obj3)
+    console.log("parse", obj3);
+    obj1.name = "liujinfeng"
+
+    const obj4 = obj1
+  </script>
+</body>
+
+</html>

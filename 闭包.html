@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 理解：什么是闭包？
+     *  1.密闭的容器，类似set、map容器，存储数据的
+     *  2.闭包是一个对象，存放数据的格式： key:value
+     * 形成的条件：
+     *  1.函数嵌套
+     *  2.内部函数引用外部函数的局部变量
+     * 闭包的优点：
+     *  延长外部函数局部变量的声明周期
+     */
+    function fun() {
+        let count = 1;
+        return function () {
+            console.log(count)
+        }
+    }
+
+    const fn2 = fun()  //fun函数调用完成后，count局部变量本应该被销毁，但因为产生了闭包，count变量保存
+    fn2();
+</script>
+</body>
+</html>

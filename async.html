@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // async函数await 等待Promise状态可能为rejected，那么await所在行的后面行代码都不会被执行，且async函数返回的promise状态也为rejected，值为await等待Promise失败状态的值。可以激活async的链式调用then(callback1,callback2)方法的第二个失败状态回调函数，或者.then().catch(()=>{})判断；
+    // 如果想要实现：无论await等待的Promise是否成功，await后面的代码都会被全部执行，那么就需要将await 所在行代码放入try{}模块中，通过catch(error){}接收错误,这里的error是Promise.reject(value)中的value值；一旦使用了try{}catch(e){}，那么async函数中代码就能全部执行，async函数返回的promise状态就为成功状态（可能成功值，原因为没写return value）,即触发不了async的链式调用then(callback1,callback2)方法的第二个失败状态回调函数。或者.then().catch(()=>{})判断；
+    // 结论，要么不用try()catch(e){},通过async的链式调用then(callback1,callback2)方法的第二个失败状态回调函数是否激活，判断async的状态。要么使用try()catch(e){}，通过判断catch(e){}模块中的语句是否执行，判断await 等待的promise的状态。
+    // 如果 await promise对象状态为失败，res = undefiend
+    // async function fn1() {
+    //   const res = await Promise.reject(333).catch((e) => {
+    //     console.log('xxx', e);
+    //     return '888'
+    //   })
+    //   console.log(999, res);
+    // }
+    // fn1().then((res) => {
+    //   console.log(111, res)
+    // }).catch((err) => {
+    //   console.log(err);
+    // })
+    // console.log(Promise.reject(44).catch((e) => {
+    //   console.log(111, e);
+    //   return 555
+    // }));
+
+    // // async函数终极写法,但应该不适用await axios请求
+    // async function fun() {
+    //   const res = await Promise((resolve, reject) => {
+    //     // to do something
+    //   }).catch(error => {
+    //     // 如果Promise对象状态为reject，打印rejected(value)中value的值
+    //     console.log(error);
+    //     return error
+    //   })
+    //   if (res.code === 0) {
+    //     // this.data = res.data
+    //   } else {
+    //     // 打印错误信息
+    //     Toast(res.message)
+    //   }
+
+    // }
+
+    async function log() {
+      const res = await Promise.reject(111).catch(e => {
+        console.log('error', e);
+        return;
+      })
+      // let res
+      // try {
+      //   res = await Promise.reject('error')
+      // } catch (e) {
+      //   console.log('e', e);
+      // }
+      console.log('res', res);
+
+    }
+    // console.log(log());
+
+    const demo = Promise.reject(111).catch(e => {
+      console.log('error', e);
+      return;
+    })
+    console.log(demo);
+  </script>
+</body>
+
+</html>

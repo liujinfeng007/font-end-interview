@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            background-color: red;
+        }
+        img {
+            /*行内|行内块的默认对齐方式为基线对齐*/
+            /*文字默认对齐方式为基线对齐*/
+           /*vertical-align 设置元素垂直对齐方式,该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。*/
+            vertical-align: middle;
+        }
+        .another{
+            /*未设置高度,line-height即为盒子的高度*/
+
+            /*设置了高度,再设置行高,盒子实际高度为height,当行高等于高度,文字垂直居中对齐;当行高小于高度,文字偏上显示;当行高大于高度,文字偏下显示*/
+            line-height: 50px;
+            height: 20px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!--行高组成部分为:文本高度+上行距+下行距-->
+<!--为什么图片底部会出现空白?-->
+<!--原因就是,图片属于行内块元素,默认对象方式为基线对齐,空白部分为基线到底线的距离-->
+<div class="container">
+    <div class="box">
+        <img src="" alt="" width="50px" height="50px">
+        <span>hello</span>
+    </div>
+    <div>HELLO WORLD</div>
+</div>
+<div class="another">
+    HELLO WORLD
+</div>
+</body>
+</html>

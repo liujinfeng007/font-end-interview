@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    <!--已知字符串foo="get-element-by-id"，写一个function将其转换成驼峰命名-->
+  /*  let foo = 'get-element-by-id'
+    let arr = foo.split('-')
+    const str = arr[1].charAt(0).toUpperCase() + arr[1].substring(1);
+    // console.log(str)
+    for (let i = 1; i < arr.length; i++) {
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+    }
+    console.log(arr.join(""))*/
+
+    function toCamel(args,sym){
+        //split方法 -以“-”作为分隔符，转换为数组
+        // let arr = args.split("-");
+        let arr = args.split(sym);
+        for (let i = 1; i < arr.length; i++) {
+            // charAt -返回指定索引处的字符
+            // toUpperCase -转换为大写
+            // substring(start:number,end?:number)  包含范围左闭右开
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+        }
+        // 将数组通过连接符连接起来
+        return arr.join("");
+    }
+    let str=toCamel("liu&jin&feng","&")
+    str=toCamel('zhang san'," ")
+
+    console.log(str)
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class _obj {
+      d = 4
+    }
+    class obj extends _obj {
+      a = 1
+      b = 2
+      c = 3
+    }
+    const o = new obj()
+    console.log(o);
+    for (const key in o) {
+      if (o.hasOwnProperty(key)) {
+        console.log('键名：', key);
+        console.log('键值：', o[key]);
+      }
+    }
+  </script>
+</body>
+
+</html>

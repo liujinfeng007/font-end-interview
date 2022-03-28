@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            position: relative;
+            /*width: 100px;*/
+            background-color: skyblue;
+        }
+
+        .clearfix:after, .clearfix:before {
+            display: block;
+            content: '';
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .box {
+            /*position: absolute;*/
+            /*width: 50px;*/
+            /*float: left;*/
+            height: 20px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+<div class="container clearfix">
+    <!-- 清除浮动，是清除属性float造成的影响-->
+        <div class="box"></div>
+<!--    <p>哈哈哈</p>-->
+<!--    <span></span>-->
+</div>
+
+</body>
+</html>

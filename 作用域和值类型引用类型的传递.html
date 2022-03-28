@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.值类型传递
+    var num1 = 55;
+    var num2 = 66;
+    function fn(num,num1){
+        num = 100;
+        num1=100;
+        num2 = 100;
+        console.log(num) //100
+        console.log(num1)   //100
+        console.log(num2)   //100
+    }
+    fn(num1,num2)
+    console.log(num1) //55
+    console.log(num2)   //100
+    // console.log(num)    //报错
+
+    // 2.引用类型传递
+    function Person(name,age,sex) {
+        this.name = name;
+        this.age= age;
+        this.sex=sex
+    }
+    function fn(person) {
+        // 相当于 person=p   person获得了p的地址；person.name指向p.name且修改了p.name的值。
+
+        person.name='lisi';
+        //变量person重新获得了一个新生成对象的地址
+        person=new Person('aa',10,'male')
+    }
+    const p = new Person('zhangsan',20,'female')
+    console.log(p.name)
+    fn(p)
+    //变量p指向的地址始终没有发生改变
+    console.log(p.name)
+</script>
+</body>
+</html>

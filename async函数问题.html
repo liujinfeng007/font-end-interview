@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="bigbox">
+    <h1 class="box">
+      hello
+  </div>
+  </div>
+  <script>
+    async function fn() {
+      try {
+        const res = await pro()
+        console.log(res);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    function pro() {
+      return new Promise(resolve => {
+       setTimeout(()=>{
+         resolve(1)
+       })
+      })
+    }
+    fn()
+    Promise.resolve(12).then(e => console.log(e))
+  </script>
+</body>
+
+</html>

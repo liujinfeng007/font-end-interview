@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*总结：下列方法中，不改变原元素的方法有slice()、concat()、join()、split()*/
+        //1. splice(index,howmany,item1,item2,...)方法，该方法会改变原数组。该函数返回值为 删除的项目，没有删除的元素，则返回一个空数组
+        //- index  指定在什么位置添加或者删除项目，使用负值则从数组末尾开始的位置。
+        //- howmany  指定要删除的项目数，如果为0，则不会删除任何项目
+        //- item    要添加到数组的新项目
+        let arr = [1, 2, 3, 4, 5]
+
+        // arr.splice(0,2,6)
+        // console.log(arr) //6 3 4 5
+
+        // const x = arr.splice(0, 0, 6) //[]
+        // console.log(x)
+        // console.log(arr);
+
+        //2.slice(start,end) 该方法截取字符串，不会改变原元素，函数返回值为截取的字符串，左闭右开
+        // const newarr = arr.slice(0, 2)  //[1,2]
+
+        //3.push() 方法向数组最后添加一个元素(也可同时添加多个)，函数返回值为数组最新长度。会改变元素。
+        // const length = arr.push(7，7)
+        // console.log(length)  //7
+        // console.log(arr)
+
+        //4.pop()方法删除数组最后一个元素，函数返回值为删除的元素。会改变原数组。
+        // const el =  arr.pop()
+        // console.log(el) //5
+        // console.log(arr)
+
+        // 5.shift()方法转移数组首个元素，函数返回值为删除的元素，会改变原数组。
+        // const el = arr.shift();
+        // console.log(el)
+        // console.log(arr)
+
+        //6.unshift()方法向数组头添加元素，函数返回值为数组最新长度，会改变原数组 。
+        // const length = arr.unshift(-1,0);
+        // console.log(length)  //7
+        // console.log(arr)
+
+        // 8.concat()方法，连接数组，返回新数组，不改变原数组。
+        // const newarr = arr.concat([-2, -2, -2])
+        // console.log(newarr)
+        // console.log(arr)
+
+        // 9.reverse()方法，反转数组,改变原数组。
+        // const newarr=arr.reverse()
+        // console.log(newarr)
+        // console.log(arr)
+
+        //10.join([separator])方法，以指定分隔符连接数组元素，返回字符串。不改变原数组。
+        // console.log(arr.join("-")); //1-2-3-4-5
+        // console.log(arr) //[1,2,3,4,5]
+
+        // 11.split("-")方法，将以指定分隔符的连接的字符串分割为字符串数组。不改变原字符串。
+        // const str = 'liu-jin-feng'
+        // console.log(str.split("-"));
+        // console.log(str)
+
+        // 12.filter()方法创建一个新的数组，新数组中的元素是通过检查指定数组中复合条件的所有元素。
+        // 注：filter()不会对空数组进行检测。不会改变原数组。
+        // const newArr = arr.filter((currentValue, index) => {
+        //     return currentValue >= 2
+        // })
+        // console.log(newArr);
+
+        // 13.map()方法返回一个新数组，数组中的元素为原始数组调用函数处理后的值。map()按照原数组元素依次处理元素。
+        // 注意：map()不会对空数组进行检测。map不会改变原数组。
+        const newArr = arr.map((currentValue, index) => {
+            return currentValue * 2
+        })
+        console.log(newArr);
+
+    </script>
+</body>
+
+</html>

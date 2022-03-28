@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            /*text-align: center;*/
+            /*display: flex;*/
+            /*justify-content: center;*/
+        }
+
+        .box {
+            /*display: inline-block;*/
+            width: 100px;
+            margin: 0 auto;
+
+            /*text-align: center;*/
+
+            background-color: gold;
+
+            /*单行文本溢出显示省略号,前提是必须要有宽度*/
+            /*white-space指定元素内的空白如何处理*/
+            /*overflow: hidden;
+            white-space: nowrap;
+            text-overflow:ellipsis ;*/
+
+            /*多行文本溢出显示省略号*/
+            /*display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp:2;
+            overflow: hidden;*/
+
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        hello world!你好，世界！很高兴
+    </div>
+</div>
+</body>
+</html>

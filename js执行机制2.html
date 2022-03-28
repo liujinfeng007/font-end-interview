@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log("start");
+    // async function anc(params) {
+    //   const res = await new Promise((resolve,reject)=>{
+    //     console.log("hello");
+    //     setTimeout(() => {
+    //       console.log("world");
+    //       resolve("welcome")
+    //     }, 2000);
+    //   });
+    //   console.log(res);
+    // }
+    // setTimeout(() => {
+    //   console.log('setTimeout');
+    //   Promise.resolve().then(() => {
+    //     console.log(6666);
+    //   })
+    // })
+
+    async function anc(params) {
+      const res = await new Promise((resolve) => {
+        console.log('hello');
+        // setTimeout(() => {
+        resolve("world")
+        // })
+      })
+      const res1 = await Promise.resolve("the world").then((res) => {
+        console.log(111);
+        console.log(res);
+      })
+      console.log(res1);
+    }
+    anc()
+    Promise.resolve(111).then((res) => {
+      console.log(res);
+    })
+    console.log("end");
+
+    // let axxx = new Promise((resolve, reject) => {
+    //   console.log('hello');
+    //   reject(2222)
+    // })
+    // (async function () {
+    //   await anc()
+    //   console.log(2111);
+    // })();
+  </script>
+</body>
+
+</html>

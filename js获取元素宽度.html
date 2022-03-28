@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      /* box-sizing: border-box; */
+      width: 100px;
+      height: 100px;
+      padding-left: 25px;
+      padding-right: 25px;
+      border: 10px solid #ccc;
+      background-color: gold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+  </div>
+  <script>
+    const box = document.querySelector('.box')
+    // 无论盒子为content-box、border-box，clientWidth获取的是元素的 padding+content 的总宽度；offsetWidth获取元素的 border+padding+content 的总宽度。
+    // 另外offsetWidth、offsetHeight获取的元素宽高，不论是在行内设置的宽高、还是在选择器里面设置的，都能获取到。而style.width、style.height只能获取行内样式里面设置的样式
+    // 另外scrollWidth
+    console.log(box.clientWidth);
+    console.log(box.offsetWidth);
+    console.log(box.scrollWidth);
+  </script>
+</body>
+
+</html>

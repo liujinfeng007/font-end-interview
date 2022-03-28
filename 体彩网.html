@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>体彩网</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <style>
+    body {
+      height: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--重庆体彩网首页两侧悬浮广告样式-->
+  <style>
+    .ad-besides {
+      vertical-align: middle;
+      border: 0;
+      outline: 0;
+      max-width: 30vw;
+      max-height: 61vh;
+    }
+
+    .img-left,
+    .img-right {
+      position: fixed;
+      top: 36vh;
+      z-index: 9999;
+    }
+
+    .img-left {
+      left: 0;
+    }
+
+    .img-right {
+      right: 0;
+    }
+
+    .close-ico {
+      position: absolute;
+      top: 0;
+      right: 0;
+      max-width: 5.5vw;
+      max-height: 5vh;
+      display: inline-block;
+    }
+  </style>
+  <!--重庆体彩网首页两侧悬浮广告-->
+  <a href="http://www.cqtcw.net/html/2022-02/09/content_51856566.htm" class="img-left" target="_blank"
+    style="display: block"><img src="./404758/images/adv250_480.jpg" alt="" class="ad-besides"><img
+      src="./404758/images/close.png" alt="" class="close-ico"></a>
+  <a href="http://www.cqtcw.net/html/2022-02/09/content_51856566.htm" class="img-right" target="_blank"
+    style="display: block"><img src="./404758/images/adv250_480.jpg" alt="" class="ad-besides"><img
+      src="./404758/images/close.png" alt="" class="close-ico"></a>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.close-ico').on('click', function (e) {
+        $(this).parent().hide()
+        return false
+      })
+    });
+  </script>
+
+  <!-- 重庆体彩网首页两侧悬浮广告
+  <a href="http://www.cqtcw.net/html/2022-02/09/content_51856566.htm" class="img-left" target="_blank"
+    style="display: block"><img src="./404758/images/adv250_480.jpg" alt="" class="ad-besides"><img
+      src="./404758/images/close.png" alt="" class="close-ico"></a>
+  <a href="http://www.cqtcw.net/html/2022-02/09/content_51856566.htm" class="img-right" target="_blank"
+    style="display: block"><img src="./404758/images/adv250_480.jpg" alt="" class="ad-besides"><img
+      src="./404758/images/close.png" alt="" class="close-ico"></a>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.close-ico').on('click', function (e) {
+        $(this).parent().hide()
+        return false
+      })
+    });
+  </script> -->
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 开启滚动：容器设置高度，overflow-y:scroll */
+    .container {
+      width: 100px;
+      height: 100px;
+      /* overflow: hidden; */
+      overflow-y: scroll;
+      /* 解决ios overflow：scroll 明显卡顿问题 */
+      -webkit-overflow-scrolling: touch;
+
+      background-color: gold;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box">helloworld worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello
+      worldhello worldhello worldhello worldhello world</div>
+  </div>
+</body>
+
+</html>

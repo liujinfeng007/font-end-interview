@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Human(name,age){
+        this.name =name;
+        this.age = age;
+        this.run = function (){
+            console.log(`已经${this.age}的${this.name}正在running`)
+        }
+    }
+    Human.prototype.log=function (){
+        console.log(`${this.name}已经${this.age}岁了`)
+    }
+    function Person(name,age){
+
+        Human.call(this,name,age);  //单独使用该语句为对象冒充继承，但是没法继承原型链上的属性和方法
+
+        this.name=name;
+        this.age = age;
+    }
+
+    console.log(Human.prototype);
+    console.log(`#######################`)
+
+    Person.prototype=new Human()    //单独使用该语句为原型链继承，可以继承原型链上的属性和方法，但是不能给父类传参。
+
+    const p =  new Person('liu',20)
+    console.log(p)
+    p.run()
+    p.log()
+
+    // es5实现继承的终极方案，对象冒充继承+原型链继承
+
+</script>
+</body>
+</html>
