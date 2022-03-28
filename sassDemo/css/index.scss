@@ -1,0 +1,24 @@
+@import "requires";
+*{
+    padding: 0;
+    height: 0;
+    body{
+        background-color: pink;
+    }
+    div{
+        font-size: large;
+    }
+}
+@mixin square {
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 1px solid gold;
+}
+.box {
+    @include square()
+}
+.smallbox {
+    @extend .box
+}

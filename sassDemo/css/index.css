@@ -1,0 +1,32 @@
+html {
+  font: optional;
+}
+
+a {
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  height: 0;
+}
+
+* body {
+  background-color: pink;
+}
+
+* div {
+  font-size: large;
+}
+
+.box, .smallbox {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  border: 1px solid gold;
+}
+/*# sourceMappingURL=index.css.map */
